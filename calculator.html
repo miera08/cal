@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>계산기</title>
+		<style>
+			#cal{
+				width:300px;
+				height: 400px; 
+				margin: 0 auto; 
+				position:relative; 
+				background-color: darkgray; 
+				position: relative;
+			}
+			#window{
+				width:296px;
+				height:70px; 
+				margin: 5px 2px 10px 2px;
+				text-align: right;
+				font-size:large;
+				padding:5px;
+				background-color: rgb(75, 75, 75);
+				color: white;
+			}
+			#cal>button{
+					
+				width:60px;
+				height:50px;
+				margin:5px;
+				background-color: black;
+				color: white;
+			}
+			#cal>#res{
+				width:290px;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="cal" >
+			<input type="text" id="window" >
+			
+			<button id="7" onclick="add(7)">
+				7
+			</button>
+			<button id="8" onclick="add(8)">
+				8
+			</button>
+			<button id="9" onclick="add(9)">
+				9
+			</button>
+			<button id="div" onclick="add('/')">
+				/
+			</button>
+			<button id="4" onclick="add(4)">
+				4
+			</button>
+			<button id="5" onclick="add(5)">
+				5
+			</button>
+			<button id="6" onclick="add(6)">
+				6
+			</button>
+			<button id="mul" onclick="add('*')">
+				*
+			</button>
+			<button id="1" onclick="add(1)">
+				1
+			</button>
+			<button id="2" onclick="add(2)">
+				2
+			</button>
+			<button id="3" onclick="add(3)">
+				3
+			</button>
+			<button id="sub" onclick="add('-')">
+				-
+			</button>
+			<button id="0" onclick="add(0)">
+				0
+			</button>
+			<button id="point" onclick="add('.')">
+				.
+			</button>
+			<button id="cancle" onclick="cancle()">
+				C
+			</button>
+			<button id="sum" onclick="add('+')">
+				+
+			</button>
+			<button id="res" onclick="result()">
+				=
+			</button>
+		</div>
+	</body>
+	
+</html>
+<script>
+	function add(doA){
+		var display=document.getElementById("window");
+		display.value = display.value+doA;
+	}
+	function result(){
+		var display=document.getElementById("window");
+		var res=eval(display.value);
+		document.getElementById("window").value=res;
+	}
+	function cancle(){
+		var display=document.getElementById("window");
+		display.value ="";
+	}
+</script>
