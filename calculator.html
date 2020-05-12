@@ -5,7 +5,7 @@
 		<style>
 			#cal{
 				width:300px;
-				height: 400px; 
+				height: 390px; 
 				margin: 0 auto; 
 				position:relative; 
 				background-color: darkgray; 
@@ -38,6 +38,7 @@
 	</head>
 	<body>
 		<div id="cal" >
+			
 			<input type="text" id="window" >
 			
 			<button id="7" onclick="add(7)">
@@ -96,15 +97,20 @@
 	
 </html>
 <script>
+	/*버튼 눌렀을때 창에 입력하는 함수*/
 	function add(doA){
 		var display=document.getElementById("window");
 		display.value = display.value+doA;
 	}
+
+	/*창에 입력된 식의 결과값 내는 함수*/
 	function result(){
 		var display=document.getElementById("window");
 		var res=eval(display.value);
 		document.getElementById("window").value=res;
 	}
+
+	/*창 초기화 함수*/
 	function cancle(){
 		var display=document.getElementById("window");
 		display.value ="";
